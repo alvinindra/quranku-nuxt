@@ -36,6 +36,7 @@
         {{ title }}
       </div>
     </div>
+    <ToggleDarkMode />
   </header>
 </template>
 

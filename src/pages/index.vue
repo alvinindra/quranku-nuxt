@@ -3,6 +3,7 @@
   <main className="px-[20px] w-full">
     <HomeHeader />
     <HomeMenu />
+    <HomeListSurah :surah-info="surahInfo" />
   </main>
 </template>
 

@@ -1,8 +1,12 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --font-sans: Poppins, sans-serif;
   --font-display: Isep Misbah;
+  --drop-shadow-custom: 0px 2px 16px rgba(138, 138, 142, 0.25);
+  --drop-shadow-dark: 0px 3px 8px 4px #2f2f2f;
 }
 
 html,
