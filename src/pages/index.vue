@@ -10,6 +10,10 @@
 <script setup lang="ts">
 import type { SurahInfo } from '~/types/SurahInfo'
 
+useHead({
+  title: 'Quranku'
+})
+
 const surahInfo = ref<SurahInfo[]>([])
 
 const res = await import('@/data/surah-info.json')

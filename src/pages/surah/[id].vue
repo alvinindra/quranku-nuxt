@@ -54,6 +54,14 @@ onMounted(async () => {
   surah.value = res.default[id]
 })
 
+const pageTitle = computed(() =>
+  surah.value?.name_latin ? `${surah.value.name_latin} - Quranku` : 'Quranku'
+)
+
+useHead({
+  title: pageTitle
+})
+
 const isSpecial = computed(() => {
   if (!surah.value) return false
   const num = parseInt(surah.value.number)
