@@ -1,4 +1,4 @@
-import { __isNotNull } from './index'
+import { __isNotNull } from "./index"
 
 export const getItem = (key: string, v: string) => {
   try {
@@ -9,13 +9,16 @@ export const getItem = (key: string, v: string) => {
         // check cache version
         if (__isNotNull(dataInCache.v) && __isNotNull(v)) {
           const versionInCache = dataInCache.v
-          if (v === versionInCache) { // only return value when version was matched
+          if (v === versionInCache) {
+            // only return value when version was matched
             return dataInCache.value
           } else {
             // @TODO cek delete item
             // localStorage.deleteItem(key)
           }
-        } else { return dataInCache.value } // return value when version null without checking version
+        } else {
+          return dataInCache.value
+        } // return value when version null without checking version
       }
     }
   } catch (e) {
@@ -23,11 +26,11 @@ export const getItem = (key: string, v: string) => {
   }
 }
 
-export const setItem = (key: any, value: '', version: string) => {
+export const setItem = (key: any, value: any, version: string) => {
   try {
     const data = {
       v: version,
-      value
+      value,
     }
     const valString = JSON.stringify(data)
     localStorage.setItem(key, valString)

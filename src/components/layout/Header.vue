@@ -7,7 +7,7 @@
       )
     "
   >
-    <button v-if="isBack" class="relative" @click="handleClick">
+    <button v-if="isBack" class="cursor-pointer relative" @click="handleClick">
       <svg
         class="fill-[#0C1517] dark:fill-white"
         width="24"
