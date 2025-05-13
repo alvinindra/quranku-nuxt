@@ -17,7 +17,7 @@
       </div>
       <template v-if="hasCache">
         <div class="font-bold text-base mb-[3px] text-white">
-          {{ cacheLastRead.surah.name_latin }}
+          {{ cacheLastRead?.surah?.name_latin }}
         </div>
         <div class="text-xs text-white">Ayat {{ cacheLastRead.verse }}</div>
       </template>
@@ -43,13 +43,16 @@ import storageKey from '@/constant/storage-key'
 import { getItem } from '@/utils/storage'
 
 const router = useRouter()
+const cacheLastRead = ref<any>({})
+const hasCache = computed(() => Object.keys(cacheLastRead.value).length > 0)
 
-const cacheLastRead = getItem(storageKey.LAST_READ, storageKey.VERSION) || {}
-const hasCache = computed(() => Object.keys(cacheLastRead).length > 0)
+onMounted(() => {
+  cacheLastRead.value = getItem(storageKey.LAST_READ, storageKey.VERSION) || {}
+})
 
 function gotoLastRead() {
   if (hasCache.value) {
-    router.push(`/surah/${cacheLastRead.numberSurah}#${cacheLastRead.verse}`)
+    router.push(`/surah/${cacheLastRead.value.numberSurah}#${cacheLastRead.value.verse}`)
   }
 }
 </script>

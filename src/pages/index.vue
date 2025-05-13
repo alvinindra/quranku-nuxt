@@ -1,11 +1,10 @@
 <template>
   <LayoutHeader title="Quranku" />
   <main className="w-full" style="padding: 0 20px">
-    <ClientOnly>
-      <HomeHeader />
-    </ClientOnly>
+    <HomeHeader />
     <HomeMenu />
     <HomeListSurah :surah-info="surahInfo" />
+    <HomeScrollToTop />
   </main>
 </template>
 
