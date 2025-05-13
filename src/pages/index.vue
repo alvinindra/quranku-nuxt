@@ -1,6 +1,6 @@
 <template>
   <LayoutHeader title="Quranku" />
-  <main className="px-5 w-full">
+  <main className="w-full" style="padding: 0 20px">
     <ClientOnly>
       <HomeHeader />
     </ClientOnly>
