@@ -17,7 +17,7 @@
       </div>
       <template v-if="hasCache">
         <div class="font-bold text-base mb-[3px] text-white">
-          {{ cacheLastRead.surah }}
+          {{ cacheLastRead.surah.name_latin }}
         </div>
         <div class="text-xs text-white">Ayat {{ cacheLastRead.verse }}</div>
       </template>
@@ -46,7 +46,7 @@ const router = useRouter()
 
 const cacheLastRead = getItem(storageKey.LAST_READ, storageKey.VERSION) || {}
 const hasCache = computed(() => Object.keys(cacheLastRead).length > 0)
-
+console.log('cacheLastRead', cacheLastRead)
 function gotoLastRead() {
   if (hasCache.value) {
     router.push(`/surah/${cacheLastRead.numberSurah}#${cacheLastRead.verse}`)

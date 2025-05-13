@@ -32,7 +32,7 @@
         >
           <span class="my-auto">{{ text }}</span>
         </div>
-        <button class="ml-auto" @click="setLastReadVerse(text)">
+        <button class="ml-auto cursor-pointer" @click="setLastReadVerse(text)">
           <img
             src="/images/icon/bookmark.svg"
             width="24"
