@@ -46,7 +46,7 @@ const router = useRouter()
 
 const cacheLastRead = getItem(storageKey.LAST_READ, storageKey.VERSION) || {}
 const hasCache = computed(() => Object.keys(cacheLastRead).length > 0)
-console.log('cacheLastRead', cacheLastRead)
+
 function gotoLastRead() {
   if (hasCache.value) {
     router.push(`/surah/${cacheLastRead.numberSurah}#${cacheLastRead.verse}`)

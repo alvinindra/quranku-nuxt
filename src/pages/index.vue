@@ -1,7 +1,9 @@
 <template>
   <LayoutHeader title="Quranku" />
-  <main className="px-[20px] w-full">
-    <HomeHeader />
+  <main className="px-5 w-full">
+    <ClientOnly>
+      <HomeHeader />
+    </ClientOnly>
     <HomeMenu />
     <HomeListSurah :surah-info="surahInfo" />
   </main>
