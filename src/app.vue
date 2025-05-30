@@ -16,6 +16,7 @@ const description = 'Baca Al-Quran dengan ayat terjemahan Bahasa Indonesia'
 useHead({
   title,
   titleTemplate: '%s',
+  htmlAttrs: { lang: 'id' },
   meta: [
     { name: 'description', content: description },
     { name: 'keywords', content: 'Al-Quran, Quran, Quran Indonesia, Quranku' },
